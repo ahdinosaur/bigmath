@@ -14,7 +14,7 @@ npm install --save bigmath
 
 `BigMath` is an grab-bag of the following operators from [`bignumber.js`](https://mikemcl.github.io/bignumber.js/):
 
-if the operator normally returns a [`BigNumber`](https://mikemcl.github.io/bignumber.js/#bignumber), our operator instead returns a string using [`.valueOf()`](https://mikemcl.github.io/bignumber.js/#valueOf).
+(note: if the operator normally returns a [`BigNumber`](https://mikemcl.github.io/bignumber.js/#bignumber), our operator instead returns a string using [`.valueOf()`](https://mikemcl.github.io/bignumber.js/#valueOf).)
 
 - [`absoluteValue`](https://mikemcl.github.io/bignumber.js/#abs)
 - [`abs`](https://mikemcl.github.io/bignumber.js/#abs)
@@ -30,7 +30,7 @@ if the operator normally returns a [`BigNumber`](https://mikemcl.github.io/bignu
 - [`equals`](https://mikemcl.github.io/bignumber.js/#eq)
 - [`eq`](https://mikemcl.github.io/bignumber.js/#eq)
 - [`floor`](https://mikemcl.github.io/bignumber.js/#floor)
-- [`greaterThan`](https://mikemcl.github.io/bignumber.js/#
+- [`greaterThan`](https://mikemcl.github.io/bignumber.js/#gt)
 - [`gt`](https://mikemcl.github.io/bignumber.js/#gt)
 - [`greaterThanOrEqualTo`](https://mikemcl.github.io/bignumber.js/#gte)
 - [`gte`](https://mikemcl.github.io/bignumber.js/#gte)
