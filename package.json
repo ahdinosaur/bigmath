@@ -1,6 +1,6 @@
 {
   "name": "bigmath",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "arithmetic operators for arbitrary-precision numbers",
   "main": "index.js",
   "scripts": {
