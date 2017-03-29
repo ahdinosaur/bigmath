@@ -58,5 +58,10 @@ PROTO_METHODS.forEach(name => {
 })
 
 STATIC_METHODS.forEach(name => {
-  exports[name] = BigNumber[name]
+  exports[name] = (...args) => {
+    const result = BigNumber[name](...args)
+    return result instanceof BigNumber
+      ? result.valueOf()
+      : result
+  }
 })
