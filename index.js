@@ -2,42 +2,38 @@ const BigNumber = require('bignumber.js')
 
 const PROTO_METHODS = [
   'absoluteValue', 'abs',
-  'ceil',
-  'comparedTo', 'cmp',
+  'comparedTo',
   'decimalPlaces', 'dp',
   'dividedBy', 'div',
-  'dividedToIntegerBy', 'divToInt',
-  'floor',
-  'greaterThan', 'gt',
-  'greaterThanOrEqualTo', 'gte',
+  'dividedToIntegerBy', 'idiv',
+  'exponentiatedBy', 'pow',
   'isEqualTo', 'eq',
   'isFinite',
+  'isGreaterThan', 'gt',
+  'isGreaterThanOrEqualTo', 'gte',
   'isInteger', // 'isInt',
+  'isLessThan', 'lt',
+  'isLessThanOrEqualTo', 'lte',
   'isNaN',
   'isNegative', // 'isNeg',
+  'isPositive',
   'isZero',
-  'lessThan', 'lt',
-  'lessThanOrEqualTo', 'lte',
   'minus', // 'sub',
   'modulo', 'mod',
-  'negated', 'neg',
-  'plus', // 'add',
+  'multipliedBy', 'times',
+  'negated',
+  'plus',
   'precision', 'sd',
-  'round',
-  'shift',
+  'shiftedBy',
   'squareRoot', 'sqrt',
-  'times', // 'mul',
-  'toDigits',
   'toExponential',
   'toFixed',
   'toFormat',
   'toFraction',
   'toJSON',
   'toNumber',
-  'toPower', 'pow',
   'toPrecision',
   'toString',
-  'truncated', // 'trunc',
   'valueOf'
 ]
 
@@ -48,9 +44,10 @@ const ALIAS_PROTO = {
 }
 
 const STATIC_METHODS = [
-  'max',
-  'min',
-  'random'
+  'maximum', 'max',
+  'minimum', 'min',
+  'random',
+  'sum'
 ]
 
 PROTO_METHODS.forEach(name => {
