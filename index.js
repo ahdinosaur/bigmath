@@ -7,26 +7,26 @@ const PROTO_METHODS = [
   'decimalPlaces', 'dp',
   'dividedBy', 'div',
   'dividedToIntegerBy', 'divToInt',
-  'equals', 'eq',
   'floor',
   'greaterThan', 'gt',
   'greaterThanOrEqualTo', 'gte',
+  'isEqualTo', 'eq',
   'isFinite',
-  'isInteger', 'isInt',
+  'isInteger', // 'isInt',
   'isNaN',
-  'isNegative', 'isNeg',
+  'isNegative', // 'isNeg',
   'isZero',
   'lessThan', 'lt',
   'lessThanOrEqualTo', 'lte',
-  'minus', 'sub',
+  'minus', // 'sub',
   'modulo', 'mod',
   'negated', 'neg',
-  'plus', 'add',
+  'plus', // 'add',
   'precision', 'sd',
   'round',
   'shift',
   'squareRoot', 'sqrt',
-  'times', 'mul',
+  'times', // 'mul',
   'toDigits',
   'toExponential',
   'toFixed',
@@ -37,9 +37,15 @@ const PROTO_METHODS = [
   'toPower', 'pow',
   'toPrecision',
   'toString',
-  'truncated', 'trunc',
+  'truncated', // 'trunc',
   'valueOf'
 ]
+
+const ALIAS_PROTO = {
+  add: 'plus',
+  sub: 'minus',
+  mul: 'times'
+}
 
 const STATIC_METHODS = [
   'max',
@@ -51,6 +57,17 @@ PROTO_METHODS.forEach(name => {
   exports[name] = (value, ...args) => {
     const instance = new BigNumber(value)
     const result = instance[name](...args)
+    return result instanceof BigNumber
+      ? result.valueOf()
+      : result
+  }
+})
+
+Object.keys(ALIAS_PROTO).forEach(name => {
+  const alias = ALIAS_PROTO[name]
+  exports[name] = (value, ...args) => {
+    const instance = new BigNumber(value)
+    const result = instance[alias](...args)
     return result instanceof BigNumber
       ? result.valueOf()
       : result
